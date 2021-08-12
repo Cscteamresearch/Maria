@@ -1,18 +1,7 @@
+
 import speech_recognition as sr
 import pyttsx3
-import datetime
-import wikipedia
-import webbrowser
-import os
-import time
-import subprocess
-# from ecapture import ecapture as ec
-import wolframalpha
-import json
-import requests
 
-
-print('I am MASTER JOHN, Computer Science Virtual assistant ')
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -27,14 +16,14 @@ def speak(text):
 def wishMe():
     hour = datetime.datetime.now().hour
     if hour >= 0 and hour < 12:
-        speak("Hello,Good Morning")
-        print("Hello,Good Morning")
+        speak("Good Morning")
+        print("Good Morning")
     elif hour >= 12 and hour < 18:
-        speak("Hello,Good Afternoon")
-        print("Hello,Good Afternoon")
+        speak("Good Afternoon")
+        print(",Good Afternoon")
     else:
-        speak("Hello,Good Evening")
-        print("Hello,Good Evening")
+        speak(",Good Evening")
+        print("Good Evening")
 
 
 def takeCommand():
@@ -44,21 +33,19 @@ def takeCommand():
         audio = r.listen(source)
 
         try:
-            statement = r.recognize_google(audio, language='en-gb')
+            statement = r.recognize_google(audio, language='en-ng')
             print(f"user said:{statement}\n")
 
-        except Exception as e:
+        except Exception as except:
             return "None"
         return statement
 
 
 wishMe()
-speak("I am MASTER JOHN, Computer Science Virtual assistant")
-speak("Let me give you, The breif History of the Department.")
-speak("The Department was established, in February, 1991, and the current head of department, is Dr. Hashim Bisallah. it currently has, 20 full time, and 5 adjunct  academic staff. the current population of students, is 690 spread across 100 level to the 5th session.")
-speak("Our Mission:, is to develop, and impact knowledge, and skills, in the feild of computer science")
-speak("Our vision:, 1. An influential role in industry, and the information technology community, 2. Sustaining high respect, for its research, and undergraduate education, 3. Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
-speak("we offer admission into  BSC, PGD, MSC and PHD, in computer science.")
+speak("i am")
+
+# print(thought = [statement])
+
 
 if __name__ == '__main__':
 
@@ -66,10 +53,7 @@ if __name__ == '__main__':
         #speak("Welcome Dr. Bisallah Hashim the H O D of computer science")
         #speak("Welcome Prof. Abdul-Rasheed Na'Allah the vice chancellor of University of Abuja")
        # speak("Tell me how can I help you?") or
-
-        speak("How may i be of help?")
-        print("How may i be of help?")
-
+        speak("How may i be of assistant to you")
         statement = takeCommand().lower()
         if statement == 0:
             continue
@@ -79,11 +63,19 @@ if __name__ == '__main__':
             print('your personal assistant MASTER JOHN is shutting down,Good bye')
             break
 
-        if 'what is' in statement or 'where is' in statement or 'who' in statemen:
-            speak('please wait...')
+        if 'wikipedia' in statement:
+            speak('Searching Wikipedia...')
             statement = statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
-            speak(" ")
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
+
+        elif 'google' in statement:
+            speak('Searching Google...')
+            statement = statement.replace("google", "")
+            results = google.summary(statement, sentences=3)
+            speak("According to Google")
             print(results)
             speak(results)
 
@@ -137,27 +129,24 @@ if __name__ == '__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am MASTER JOHN version 1 point O computer science vitual assistant. I am programmed to perform minor tasks like'
+            speak('I am MASTER JOHN version 1 point O your persoanl assistant. I am programmed to perform minor tasks like'
                   'opening youtube,google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
                   'in different cities , get top headline news from times of USA and you can ask me computational or geographical questions too!')
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was built by Computer Science Research Team")
-            print("I was built by Computer Science Research Team")
+            speak("I was built by Nodestech")
+            print("I was built by Nodestech")
 
-        elif "who is the vc of university of abuja" in statement:
-            speak("The vice Chancellor of the University of Abuja, is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
-            print("The vice Chancellor of the University of Abuja, is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
+        elif "who is the vice chancellor of University of Abuja" in statement:
+            speak("The vice Chancellor of the University of Abuja is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
+            print("The vice Chancellor of the University of Abuja is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
 
-        elif "who is the head of department of computer science" in statement:
+        elif "who is the Head of Department of Computer Science" in statement:
 
             speak(
                 "The current Head of Department of Computer Science is Doctor Hashim Bisallah")
             print(
                 "The current Head of Department of Computer Science is Doctor Hashim Bisallah")
-
-        elif "what are the achievement of the vice chancellor in his two years of stay in office" in statement or "what has the v c achieve so far in the school" in statement or "what has the v c done so far in the school" in statement:
-            speak("")
 
         elif "open stackoverflow" in statement:
             webbrowser.open_new_tab("https://stackoverflow.com/login")
@@ -166,7 +155,7 @@ if __name__ == '__main__':
         elif 'news' in statement:
             news = webbrowser.open_new_tab(
                 "https://www.latestnigeriannews.com/today/vanguard/nigeria-vanguard-newspaper-headlines-today")
-            speak('Here are some headlines news, from Nigeria, Happy reading')
+            speak('Here are some headlines news from Nigeria,Happy reading')
             time.sleep(6)
 
        # elif "camera" in statement or "take a photo" in statement:

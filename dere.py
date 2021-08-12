@@ -66,9 +66,8 @@ if __name__ == '__main__':
         #speak("Welcome Dr. Bisallah Hashim the H O D of computer science")
         #speak("Welcome Prof. Abdul-Rasheed Na'Allah the vice chancellor of University of Abuja")
        # speak("Tell me how can I help you?") or
-
+        speak("what is your Name please?")
         speak("How may i be of help?")
-        print("How may i be of help?")
 
         statement = takeCommand().lower()
         if statement == 0:
@@ -79,11 +78,11 @@ if __name__ == '__main__':
             print('your personal assistant MASTER JOHN is shutting down,Good bye')
             break
 
-        if 'what is' in statement or 'where is' in statement or 'who' in statemen:
-            speak('please wait...')
+        if 'wikipedia' in statement:
+            speak('Searching Wikipedia...')
             statement = statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
-            speak(" ")
+            speak("According to Wikipedia")
             print(results)
             speak(results)
 
