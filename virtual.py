@@ -52,7 +52,7 @@ def takeCommand():
         return statement
 
 
-speak("I am MASTER JOHN, University of Abuja Virtual assistant")
+speak("I am JOHN, University of Abuja Virtual assistant")
 
 wishMe()
 
@@ -60,15 +60,13 @@ speak("Let me tell you about the University of Abuja")
 
 speak("The University of Abuja, was established, in January 1988, out of the need to provide, an institution of, higher learning, within Abuja, the new Federal Capital,"
 
-      "whose objectives will be in stride,"
-
-      "with the ideals that informed, the conception of the city.,"
+      "whose objectives will be in stride, with the ideals that informed, the conception of the city.,"
 
       "The  matriculation, of pioneer students of, the University in 1990 marked, the beginning of its academic,"
 
       "work in its mini campus, Gwagwalada., In the same year, the University was allocated, an expanse of land,"
 
-      "covering over 11,824 hectares, along Abuja-Airport, Road for the, development of its main campus., While development, of structures continued to grow,"
+      "covering over 11,824 hectares, along Abuja-Airport Road, for the, development of its main campus., While development, of structures continued to grow,"
 
       "on the main campus of the University,  it has continued, to run  its regular, programmes in the mini campus, and its distance learning, programmes in Area 3 Garki.,"
 
@@ -112,8 +110,8 @@ if __name__ == '__main__':
             continue
 
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your  assistant, MASTER JOHN, is shutting down,Good bye')
-            print('your assistant, MASTER JOHN, is shutting down,Good bye')
+            speak('your  assistant, JOHN, is shutting down,Good bye')
+            print('your assistant, JOHN, is shutting down,Good bye')
             break
 
         if 'what is' in statement or 'where is' in statement:
@@ -174,7 +172,7 @@ if __name__ == '__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am, MASTER JOHN, version, 1 point O university of abuja, vitual assistant. I am programmed to, perform minor tasks like,'
+            speak('I am, JOHN, version, 1 point O university of abuja, vitual assistant. I am programmed to, perform minor tasks like,'
 
                   'opening youtube, tell you about the university of abuja, and also the, department of, of computer, science, google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
 
@@ -225,7 +223,7 @@ if __name__ == '__main__':
 
             speak("Our Mission:, is to develop, and impact knowledge, and skills, in the feild of computer science")
 
-            speak("Our vision:, 1. An influential role in industry, and the information technology community, 2. Sustaining high respect, for its research, and undergraduate education, 3. Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
+            speak("Our vision:, (1).  An influential role in industry, and the information technology community, (2).  Sustaining high respect, for its research, and undergraduate education, (3).  Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
 
             speak("we offer admission into  BSC, PGD, MSC and PHD, in computer science.")
 
