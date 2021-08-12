@@ -12,7 +12,7 @@ import json
 import requests
 
 
-print('I am MASTER JOHN, University of Abuja, Virtual assistant ')
+print('I am JOHN, University of Abuja, Virtual assistant ')
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -90,7 +90,7 @@ speak("Our Mission: (1). To encourage the advancement of learning and, to hold o
 
       "(3). To encourage and, promote scholarship, and conduct research in all fields, of learning and human endeavor. To relate its, activities to the social, cultural and economic, needs of the people of Nigeria."
 
-      "(4). To undertake as part, of its academic, programmes distance, learning and continuing, education in various disciplines "
+      "(4). To undertake as part, of its academic, programmes distance learning, and continuing, education in various disciplines "
 
       "(5). To cater for the, interest of working, class or those who cannot, benefit from the full-time, university education, and to undertake, any other activities, appropriate for a University, of the highest standard.")
 
@@ -215,7 +215,7 @@ if __name__ == '__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
 
-        elif 'tell me about computer science' in statement:
+        elif 'tell me about computer science department' in statement:
             speak(
                 "Let me give you, The breif History of the Department of Computer Science.")
 
