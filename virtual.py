@@ -52,8 +52,8 @@ def takeCommand():
         return statement
 
 
-wishMe()
 speak("I am MASTER JOHN, Computer Science Virtual assistant")
+wishMe()
 speak("Let me give you, The breif History of the Department.")
 speak("The Department was established, in February, 1991, and the current head of department, is Dr. Hashim Bisallah. it currently has, 20 full time, and 5 adjunct  academic staff. the current population of students, is 690 spread across 100 level to the 5th session.")
 speak("Our Mission:, is to develop, and impact knowledge, and skills, in the feild of computer science")
@@ -75,11 +75,11 @@ if __name__ == '__main__':
             continue
 
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your  assistant MASTER JOHN is shutting down,Good bye')
-            print('your personal assistant MASTER JOHN is shutting down,Good bye')
+            speak('your  assistant, MASTER JOHN, is shutting down,Good bye')
+            print('your assistant, MASTER JOHN, is shutting down,Good bye')
             break
 
-        if 'what is' in statement or 'where is' in statement or 'who' in statemen:
+        if 'what is' in statement or 'where is' in statement or 'who' in statement:
             speak('please wait...')
             statement = statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
@@ -137,12 +137,12 @@ if __name__ == '__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am MASTER JOHN version 1 point O computer science vitual assistant. I am programmed to perform minor tasks like'
-                  'opening youtube,google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
-                  'in different cities , get top headline news from times of USA and you can ask me computational or geographical questions too!')
+            speak('I am, MASTER JOHN, version, 1 point O computer science, vitual assistant. I am programmed to, perform minor tasks like,'
+                  'opening youtube, tell you about the university of abuja, and also the, department of, of computer, science, google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
+                  'in different cities , get top headline news, from top Nigeria, news agencies, and you can ask me computational or geographical questions too!')
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was built by Computer Science Research Team")
+            speak("I was built, by Computer Science, Research Team")
             print("I was built by Computer Science Research Team")
 
         elif "who is the vc of university of abuja" in statement:
