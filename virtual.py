@@ -225,6 +225,7 @@ if __name__ == '__main__':
                   "thus it is regarded as the University for National Unity, located in the centre of unity.'"
 
                   "The University of Abuja has abundant potential, because of its favoured location, in the heart of the country.")
+
         elif "tell me about the vision of the university" in statement or "what about the vision of the school" in statement:
 
             speak("Our Vision: To develop, an institution of, higher learning that, combines academic excellence with, the pursuit of the unity of Nigeria.")
