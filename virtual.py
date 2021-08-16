@@ -54,6 +54,8 @@ def takeCommand():
 
 speak("I am JOHN, University of Abuja Virtual assistant")
 
+speak("i am created by the, computer science research team, under the guidiance of, Dr. Hashim Bisallah")
+
 wishMe()
 
 if __name__ == '__main__':
