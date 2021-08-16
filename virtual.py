@@ -200,7 +200,8 @@ if __name__ == '__main__':
             speak(answer)
             print(answer)
 
-        elif "tell  me about university of abuja" in statement or "do you know the history of abuja" in statement:
+        elif "history of university of abuja" in statement or "do you know the history of university of abuja" in statement:
+
             speak("Let me tell you about the University of Abuja")
 
             speak("The University of Abuja, was established, in January 1988, out of the need to provide, an institution of, higher learning, within Abuja, the new Federal Capital,"
@@ -228,7 +229,7 @@ if __name__ == '__main__':
 
                   "The University of Abuja has abundant potential, because of its favoured location, in the heart of the country.")
 
-        elif "tell me about the vision of the university" in statement or "what about the vision of the school" in statement:
+        elif "vision of the university" in statement or "what about the vision of the school" in statement:
 
             speak("Our Vision: To develop, an institution of, higher learning that, combines academic excellence with, the pursuit of the unity of Nigeria.")
 
