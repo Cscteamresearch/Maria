@@ -10,6 +10,7 @@ import subprocess
 import wolframalpha
 import json
 import requests
+import pyjoke
 
 
 print('I am JOHN, University of Abuja, Virtual assistant ')
@@ -249,5 +250,7 @@ if __name__ == '__main__':
             speak(
                 "Ok , your pc will log off in 10 sec make sure you exit from all applications")
             subprocess.call(["shutdown", "/l"])
+        elif "tell me a joke" in statement:
+            speak("ok let me tell you a joke")
 
 time.sleep(3)
