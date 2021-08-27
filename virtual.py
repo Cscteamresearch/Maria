@@ -259,18 +259,18 @@ if __name__ == '__main__':
 
                   "(5). To cater for the, interest of working, class or those who cannot, benefit from the full-time, university education, and to undertake, any other activities, appropriate for a University, of the highest standard.")
 
-        elif "log off" in statement or "sign out" in statement:
-            speak(
-                "Ok , your pc will log off in 10 sec make sure you exit from all applications")
-            subprocess.call(["shutdown", "/l"])
-
         elif "tell me a joke" in statement:
             speak("ok let me tell you a joke")
 
-        elif 'time' in command:
+        elif 'time' in statement:
             import datetime
             now = datetime.datetime.now()
             speak('Current time is %d hours %d minutes' %
                   (now.hour, now.minute))
 
-time.sleep(3)
+        elif "log off" in statement or "sign out" in statement:
+            speak(
+                "Ok , your pc will log off in 10 sec make sure you exit from all applications")
+            subprocess.call(["shutdown", "/l"])
+
+        time.sleep(3)
