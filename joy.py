@@ -1,3 +1,5 @@
+import speech_recognition as sr
+import pyttsx3
 from sklearn.metrics.pairwise import cosine_similarity, linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
@@ -14,6 +16,45 @@ import warnings
 warnings.filterwarnings("ignore")
 nltk.download('punkt')
 nltk.download('wordnet')
+
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', 'voices[0].id')
+
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+
+def wishMe():
+    hour = datetime.datetime.now().hour
+    if hour >= 0 and hour < 12:
+        speak("Hello,Good Morning")
+        print("Hello,Good Morning")
+    elif hour >= 12 and hour < 18:
+        speak("Hello,Good Afternoon")
+        print("Hello,Good Afternoon")
+    else:
+        speak("Hello,Good Evening")
+        print("Hello,Good Evening")
+
+
+def takeCommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = r.listen(source)
+
+        try:
+            statement = r.recognize_google(audio, language='en-gb')
+            print(f"user said:{statement}\n")
+
+        except Exception as e:
+            return "None"
+        return statement
+
 
 data = open('/../../Document/HR.txt', 'r', errors='ignore')
 raw = data.read()
