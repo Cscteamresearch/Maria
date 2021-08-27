@@ -104,7 +104,7 @@ def wikipedia_data(input):
         flag = True
 
 
-print("My name is Chatterbot and I'm a chatbot. If you want to exit, type Bye!")
+print("My name is Joy and I'm a intelligent virtual robot. If you want to exit, type Bye!")
 while(flag == True):
     user_response = input()
     user_response = user_response.lower()
