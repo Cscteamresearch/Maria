@@ -11,6 +11,14 @@ import wolframalpha
 import json
 import requests
 import pyjoke
+import sys
+import re
+import urllib
+import urllib2
+from bs4 import BeautifulSoup as soup
+import random
+from time import strftime
+from urllib2 import urlopen
 
 
 print('I am JOHN, University of Abuja, Virtual assistant ')
@@ -101,6 +109,11 @@ if __name__ == '__main__':
             speak("Google Mail open now")
             time.sleep(5)
 
+        elif 'open uniabuja website' in statement or "open the school website" in statement:
+            webbrowser.open_new_tab("uniabuja.edu.ng")
+            speak("uniabuja website noe open")
+            time.sleep(5)
+
         elif "weather" in statement:
             api_key = "8ef61edcf1c576d65d836254e11ea420"
             base_url = "https://api.openweathermap.org/data/2.5/weather?"
@@ -136,7 +149,7 @@ if __name__ == '__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am, JOHN, version, 1 point O university of abuja, vitual assistant. I am programmed to, perform minor tasks like,'
+            speak('I am, JOHN, version, 1 point O university of abuja, virtual assistant. I am programmed to, perform minor tasks like,'
 
                   'opening youtube, tell you about the university of abuja, and also the, department of, of computer, science, google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
 
@@ -181,11 +194,11 @@ if __name__ == '__main__':
 
         elif 'tell me about computer science department' in statement:
             speak(
-                "Let me give you, The breif History of the Department of Computer Science.")
+                "Let me give you, The brief History of the Department of Computer Science.")
 
             speak("The Department was established, in February, 1991, and the current head of department, is Dr. Hashim Bisallah. it currently has, 20 full time, and 5 adjunct  academic staff. the current population of students, is 690 spread across 100 level to the 5th session.")
 
-            speak("Our Mission:, is to develop, and impact knowledge, and skills, in the feild of computer science")
+            speak("Our Mission:, is to develop, and impact knowledge, and skills, in the field of computer science")
 
             speak("Our vision:, (1).  An influential role in industry, and the information technology community, (2).  Sustaining high respect, for its research, and undergraduate education, (3).  Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
 
@@ -250,7 +263,14 @@ if __name__ == '__main__':
             speak(
                 "Ok , your pc will log off in 10 sec make sure you exit from all applications")
             subprocess.call(["shutdown", "/l"])
+
         elif "tell me a joke" in statement:
             speak("ok let me tell you a joke")
+
+        elif 'time' in command:
+            import datetime
+            now = datetime.datetime.now()
+            speak('Current time is %d hours %d minutes' %
+                  (now.hour, now.minute))
 
 time.sleep(3)
