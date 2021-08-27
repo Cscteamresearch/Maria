@@ -1,10 +1,16 @@
 import speech_recognition as sr
 import pyttsx3
+import datetime
 from sklearn.metrics.pairwise import cosine_similarity, linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
 import random
+import time
 import string
+import subprocess
+import os
+import json
+import requests
 import re
 import string
 import unicodedata
@@ -48,21 +54,36 @@ def takeCommand():
         audio = r.listen(source)
 
         try:
-            statement = r.recognize_google(audio, language='en-gb')
+            statement = r.recognize_google(audio, language='en-us')
             print(f"user said:{statement}\n")
 
         except Exception as e:
             return "None"
         return statement
 
-
-data = open('/../../Document/HR.txt', 'r', errors='ignore')
-raw = data.read()
-raw = raw.lower()
+    speak("I am JOHN, University of Abuja Virtual assistant")
 
 
-raw[:1000]
-'human resource management is the process of recruiting, selecting, inducting employees, providing orientation, imparting training and development, appraising the performance of employees, deciding compensation and providing benefits, motivating employees, maintaining proper relations with employees and their trade unions, ensuring employees safety, welfare and healthy measures in compliance with labour laws of the land.\nhuman resource management involves management functions like planning, organizing, directing and controlling\nit involves procurement, development, maintenance of human resource\nit helps to achieve individual, organizational and social objectives\nhuman resource management is a multidisciplinary subject. it includes the study of management, psychology, communication, economics and sociology.\nit involves team spirit and team work.\nit is a continuous process.\nhuman resource management as a department in an organisation handles all aspects of employees and has various functi'
+speak("i am created by the, computer science research team, under the guidance of, Dr. Hashim Bisallah")
+
+wishMe()
+
+if __name__ == '__main__':
+
+    while True:
+        # speak("Welcome Dr. Bisallah Hashim the H O D of computer science")
+        # speak("Welcome Prof. Abdul-Rasheed Na'Allah the vice chancellor of University of Abuja")
+       # speak("Tell me how can I help you?") or
+
+        speak("How may i be of help?")
+        print("How may i be of help?")
+
+        statement = takeCommand().lower()
+        if statement == 0:
+            continue
+
+
+speak('')
 
 sent_tokens = nltk.sent_tokenize(raw)
 
