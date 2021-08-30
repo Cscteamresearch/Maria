@@ -48,8 +48,7 @@ def wishMe():
 def jokes():
     funny = pyjokes.get_jokes()
     if "say a joke" in statement or "can can you tell me a joke" in statement:
-        print(funny)
-        speak(funny)
+        joke()
 
 
 def takeCommand():
