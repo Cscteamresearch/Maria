@@ -10,7 +10,7 @@ import subprocess
 import wolframalpha
 import json
 import requests
-import pyjoke
+import pyjokes
 import sys
 import re
 import urllib
@@ -44,6 +44,12 @@ def wishMe():
     else:
         speak("Hello,Good Evening")
         print("Hello,Good Evening")
+        
+def jokes():
+    funny = pyjokes.get_jokes()
+    if "say a joke" in statement or "can can you tell me a joke" in statement:
+        print(funny)
+        speak(funny)
 
 
 def takeCommand():
@@ -259,8 +265,7 @@ if __name__ == '__main__':
 
                   "(5). To cater for the, interest of working, class or those who cannot, benefit from the full-time, university education, and to undertake, any other activities, appropriate for a University, of the highest standard.")
 
-        elif "tell me a joke" in statement:
-            speak("ok let me tell you a joke")
+      
 
         elif 'time' in statement:
             import datetime
