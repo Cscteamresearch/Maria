@@ -44,7 +44,8 @@ def wishMe():
     else:
         speak("Hello,Good Evening")
         print("Hello,Good Evening")
-        
+
+
 def jokes():
     funny = pyjokes.get_jokes()
     if "say a joke" in statement or "can can you tell me a joke" in statement:
@@ -205,7 +206,7 @@ if __name__ == '__main__':
 
             speak("Our Mission:, is to develop, and impact knowledge, and skills, in the field of computer science")
 
-            speak("Our vision:, (1).  An influential role in industry, and the information technology community, (2).  Sustaining high respect, for its research, and undergraduate education, (3).  Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
+            speak("Our vision:, (1).  An influential role in industry, and the information technology community, (2).  Sustaining high respect, for its research, and undergraduate education, (3).  Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techpreneurs. ")
 
             speak("we offer admission into  BSC, PGD, MSC and PHD, in computer science.")
 
@@ -263,8 +264,6 @@ if __name__ == '__main__':
                   "(4). To undertake as part, of its academic, programmes distance learning, and continuing, education in various disciplines "
 
                   "(5). To cater for the, interest of working, class or those who cannot, benefit from the full-time, university education, and to undertake, any other activities, appropriate for a University, of the highest standard.")
-
-      
 
         elif 'time' in statement:
             import datetime
