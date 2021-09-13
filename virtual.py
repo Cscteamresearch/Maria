@@ -13,12 +13,7 @@ import requests
 import pyjokes
 import sys
 import re
-import urllib
-import urllib2
-from bs4 import BeautifulSoup as soup
-import random
 from time import strftime
-from urllib2 import urlopen
 
 
 print('I am JOHN, University of Abuja, Virtual assistant ')
