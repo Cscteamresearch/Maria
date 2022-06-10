@@ -10,9 +10,13 @@ import subprocess
 import wolframalpha
 import json
 import requests
+import pyjokes
+import sys
+import re
+from time import strftime
 
 
-print('I am MASTER JOHN, Computer Science Virtual assistant ')
+print('I am JOHN, University of Abuja, Virtual assistant ')
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -37,6 +41,12 @@ def wishMe():
         print("Hello,Good Evening")
 
 
+def jokes():
+    funny = pyjokes.get_jokes()
+    if "say a joke" in statement or "can can you tell me a joke" in statement:
+        joke()
+
+
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -52,19 +62,17 @@ def takeCommand():
         return statement
 
 
+speak("I am JOHN, University of Abuja Virtual assistant")
+
+speak("i am created by the, computer science research team, under the guidance of, Dr. Hashim Bisallah")
+
 wishMe()
-speak("I am MASTER JOHN, Computer Science Virtual assistant")
-speak("Let me give you, The breif History of the Department.")
-speak("The Department was established, in February, 1991, and the current head of department, is Dr. Hashim Bisallah. it currently has, 20 full time, and 5 adjunct  academic staff. the current population of students, is 690 spread across 100 level to the 5th session.")
-speak("Our Mission:, is to develop, and impact knowledge, and skills, in the feild of computer science")
-speak("Our vision:, 1. An influential role in industry, and the information technology community, 2. Sustaining high respect, for its research, and undergraduate education, 3. Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techprenuers. ")
-speak("we offer admission into  BSC, PGD, MSC and PHD, in computer science.")
 
 if __name__ == '__main__':
 
     while True:
-        #speak("Welcome Dr. Bisallah Hashim the H O D of computer science")
-        #speak("Welcome Prof. Abdul-Rasheed Na'Allah the vice chancellor of University of Abuja")
+        # speak("Welcome Dr. Bisallah Hashim the H O D of computer science")
+        # speak("Welcome Prof. Abdul-Rasheed Na'Allah the vice chancellor of University of Abuja")
        # speak("Tell me how can I help you?") or
 
         speak("How may i be of help?")
@@ -75,11 +83,11 @@ if __name__ == '__main__':
             continue
 
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your  assistant MASTER JOHN is shutting down,Good bye')
-            print('your personal assistant MASTER JOHN is shutting down,Good bye')
+            speak('your  assistant, JOHN, is shutting down,Good bye')
+            print('your assistant, JOHN, is shutting down,Good bye')
             break
 
-        if 'what is' in statement or 'where is' in statement or 'who' in statemen:
+        if 'what is' in statement or 'where is' in statement:
             speak('please wait...')
             statement = statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
@@ -100,6 +108,11 @@ if __name__ == '__main__':
         elif 'open gmail' in statement:
             webbrowser.open_new_tab("gmail.com")
             speak("Google Mail open now")
+            time.sleep(5)
+
+        elif 'open uniabuja website' in statement or "open the school website" in statement:
+            webbrowser.open_new_tab("uniabuja.edu.ng")
+            speak("uniabuja website noe open")
             time.sleep(5)
 
         elif "weather" in statement:
@@ -137,15 +150,18 @@ if __name__ == '__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am MASTER JOHN version 1 point O computer science vitual assistant. I am programmed to perform minor tasks like'
-                  'opening youtube,google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
-                  'in different cities , get top headline news from times of USA and you can ask me computational or geographical questions too!')
+            speak('I am, JOHN, version, 1 point O university of abuja, virtual assistant. I am programmed to, perform minor tasks like,'
+
+                  'opening youtube, tell you about the university of abuja, and also the, department of, of computer, science, google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather'
+
+                  'in different cities , get top headline news, from top Nigeria, news agencies, and you can ask me computational or geographical questions too!')
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was built by Computer Science Research Team")
+            speak("I was built, by Computer Science, Research Team")
             print("I was built by Computer Science Research Team")
 
         elif "who is the vc of university of abuja" in statement:
+
             speak("The vice Chancellor of the University of Abuja, is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
             print("The vice Chancellor of the University of Abuja, is Prof. Abdul-Rasheed Na'Allah, he hails from Kwara state in Nigeria")
 
@@ -177,6 +193,18 @@ if __name__ == '__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
 
+        elif 'tell me about computer science department' in statement:
+            speak(
+                "Let me give you, The brief History of the Department of Computer Science.")
+
+            speak("The Department was established, in February, 1991, and the current head of department, is Dr. Hashim Bisallah. it currently has, 20 full time, and 5 adjunct  academic staff. the current population of students, is 690 spread across 100 level to the 5th session.")
+
+            speak("Our Mission:, is to develop, and impact knowledge, and skills, in the field of computer science")
+
+            speak("Our vision:, (1).  An influential role in industry, and the information technology community, (2).  Sustaining high respect, for its research, and undergraduate education, (3).  Empowering our graduates, with the vision and confidence, required to become innovative, ICT leaders and techpreneurs. ")
+
+            speak("we offer admission into  BSC, PGD, MSC and PHD, in computer science.")
+
         elif 'ask' in statement:
             speak('I can answer to computational and geographical questions and what question do you want to ask now')
             question = takeCommand()
@@ -187,9 +215,60 @@ if __name__ == '__main__':
             speak(answer)
             print(answer)
 
+        elif "history of university of abuja" in statement or "do you know the history of university of abuja" in statement:
+
+            speak("Let me tell you about the University of Abuja")
+
+            speak("The University of Abuja, was established, in January 1988, out of the need to provide, an institution of, higher learning, within Abuja, the new Federal Capital,"
+
+                  "whose objectives will be in stride, with the ideals that informed, the conception of the city.,"
+
+                  "The  matriculation, of pioneer students of, the University in 1990 marked, the beginning of its academic,"
+
+                  "work in its mini campus, Gwagwalada., In the same year, the University was allocated, an expanse of land,"
+
+                  "covering over 11,824 hectares, along Abuja-Airport Road, for the, development of its main campus., While development, of structures continued to grow,"
+
+                  "on the main campus of the University,  it has continued, to run  its regular, programmes in the mini campus, and its distance learning, programmes in Area 3 Garki.,"
+
+                  "To the Glory of God, most of the, University’s Faculties and the, Centre for Distance Learning,  have  now relocated to the, permanent site of the University,"
+
+                  "which is located less than,  ten minutes drive,  from the Nnamdi Azikwe, International Airport. ")
+
+            speak(
+                "the current vice chancellor of the university is, Prof. Abdul-Rasheed Na'Allah ")
+
+            speak("The University provides educational opportunities to all persons without distinction of race, gender, or political convictions,"
+
+                  "thus it is regarded as the University for National Unity, located in the centre of unity.'"
+
+                  "The University of Abuja has abundant potential, because of its favoured location, in the heart of the country.")
+
+        elif "vision of the university" in statement or "what about the vision of the school" in statement:
+
+            speak("Our Vision: To develop, an institution of, higher learning that, combines academic excellence with, the pursuit of the unity of Nigeria.")
+
+        elif "the mission of the university" in statement or "do you know the mission of the university" in statement:
+
+            speak("Our Mission: (1). To encourage the advancement of learning and, to hold out to all person, without distinction of race, creed, sex or political conviction, the opportunity of, acquiring higher liberal education;"
+
+                  "(2). To provide courses of instruction, and other facilities for the pursuit, of learning in all its branches. "
+
+                  "(3). To encourage and, promote scholarship, and conduct research in all fields, of learning and human endeavor. To relate its, activities to the social, cultural and economic, needs of the people of Nigeria."
+
+                  "(4). To undertake as part, of its academic, programmes distance learning, and continuing, education in various disciplines "
+
+                  "(5). To cater for the, interest of working, class or those who cannot, benefit from the full-time, university education, and to undertake, any other activities, appropriate for a University, of the highest standard.")
+
+        elif 'time' in statement:
+            import datetime
+            now = datetime.datetime.now()
+            speak('Current time is %d hours %d minutes' %
+                  (now.hour, now.minute))
+
         elif "log off" in statement or "sign out" in statement:
             speak(
                 "Ok , your pc will log off in 10 sec make sure you exit from all applications")
             subprocess.call(["shutdown", "/l"])
 
-time.sleep(3)
+        time.sleep(3)
